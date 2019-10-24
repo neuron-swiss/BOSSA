@@ -59,6 +59,7 @@ public:
         FAMILY_SAM3X,
         FAMILY_SAM3A,
 
+        FAMILY_SAM4C,
         FAMILY_SAM4S,
         FAMILY_SAM4E,
 

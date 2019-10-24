@@ -147,6 +147,15 @@ Device::create()
         _family = FAMILY_SAM7X;
         flashPtr = new EfcFlash(_samba, "AT91SAMX128", 0x100000, 512, 256, 1, 8, 0x202000, 0x208000, true);
         break;
+
+    //
+    // SAM4C
+    //
+    case 0x264c0ce0:
+        _family = FAMILY_SAM4C;
+        flashPtr = new EefcFlash(_samba, "ATSAM4C16", 0x1000000, 2048, 512, 1, 128, 0x20001000, 0x20020000, 0x400e0a00, false);
+        break;
+
     //
     // SAM4S
     //
@@ -370,6 +379,7 @@ Device::reset(void)
 
     case FAMILY_SAM3N:
     case FAMILY_SAM4S:
+    case FAMILY_SAM4C:
         _samba.writeWord(0x400E1400, 0xA500000D);
         break;
 
